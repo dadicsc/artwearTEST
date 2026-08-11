@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwear DZ | تيشيرتات أنمي حصرية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Tajawal', sans-serif; background-color: #f8fafc; overflow-x: hidden; }
+        input, select, button { font-size: 16px; }
+        @media (max-width: 640px) {
+            .product-card img { height: 360px; }
+        }
+        .product-card:hover { transform: translateY(-5px); transition: 0.3s; }
+        /* أنيميشن خفيف لظهور الصورة الكبيرة */
+        .modal-enter { opacity: 0; transform: scale(0.9); transition: all 0.3s ease-out; }
+        .modal-enter-active { opacity: 1; transform: scale(1); }
+    </style>
+
+    <!-- Facebook Pixel Code -->
+    <script id="pixel-script">
+        // سيتم حقن كود البيكسل هنا
+    </script>
+</head>
+<body class="text-slate-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm p-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-black text-slate-900 flex items-center gap-2">
+                <span class="text-indigo-600">Artwear</span> DZ
+            </div>
+            <a href="#order-section" class="bg-indigo-600 text-white px-6 py-2 rounded-full font-bold hover:bg-indigo-700 transition">اطلب الآن</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="max-w-6xl mx-auto px-4 py-12 md:py-20 text-center">
+        <h1 class="text-4xl md:text-6xl font-black mb-6 text-slate-900">تيشيرتات أنمي بتصاميم أسطورية</h1>
+        <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">طباعة DTF عالية الجودة لا تزول مع الغسيل. اختر شخصيتك المفضلة وتألق بتصميم يعبر عنك.</p>
+        <div class="inline-block bg-indigo-100 text-indigo-800 text-3xl font-black px-8 py-4 rounded-2xl shadow-sm border border-indigo-200">
+            القطعة بـ 2200 د.ج + 800 د.ج توصيل
+        </div>
+    </header>
+
+    <!-- Products Gallery -->
+    <section class="max-w-6xl mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-10 border-b-2 border-indigo-500 pb-2 inline-block mx-auto flex justify-center">التصاميم المتوفرة</h2>
+        
+        <p class="text-center text-slate-500 mb-6">اضغط على أي صورة لتكبيرها</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden product-card">
+                <img src="sukuna.png" alt="Sukuna" class="w-full h-80 object-cover object-top cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/400x500?text=الصورة+غير+موجودة'">
+                <div class="p-4 text-center"><h3 class="font-bold text-xl mb-2">Sukuna - Jujutsu Kaisen</h3></div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden product-card">
+                <img src="itachi.png" alt="Itachi" class="w-full h-80 object-cover object-top cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/400x500?text=الصورة+غير+موجودة'">
+                <div class="p-4 text-center"><h3 class="font-bold text-xl mb-2">Itachi - Naruto</h3></div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden product-card">
+                <img src="luffy-gear5.png" alt="Luffy Gear 5" class="w-full h-80 object-cover object-top cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/400x500?text=الصورة+غير+موجودة'">
+                <div class="p-4 text-center"><h3 class="font-bold text-xl mb-2">Luffy Gear 5 - One Piece</h3></div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden product-card">
+                <img src="luffy-wanted.png" alt="Luffy Wanted" class="w-full h-80 object-cover object-top cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/400x500?text=الصورة+غير+موجودة'">
+                <div class="p-4 text-center"><h3 class="font-bold text-xl mb-2">Luffy Wanted</h3></div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden product-card">
+                <img src="zoro.png" alt="Zoro" class="w-full h-80 object-cover object-top cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/400x500?text=الصورة+غير+موجودة'">
+                <div class="p-4 text-center"><h3 class="font-bold text-xl mb-2">Roronoa Zoro</h3></div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden product-card">
+                <img src="toji.png" alt="Toji Fushiguro" class="w-full h-80 object-cover object-top cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/400x500?text=الصورة+غير+موجودة'">
+                <div class="p-4 text-center"><h3 class="font-bold text-xl mb-2">Toji Fushiguro</h3></div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden product-card">
+                <img src="sasuke.png" alt="Sasuke" class="w-full h-80 object-cover object-top cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/400x500?text=الصورة+غير+موجودة'">
+                <div class="p-4 text-center"><h3 class="font-bold text-xl mb-2">Sasuke Uchiha</h3></div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden product-card md:col-span-2 lg:col-span-1 max-w-md mx-auto w-full">
+                <img src="vagabond.png" alt="Vagabond" class="w-full h-80 object-cover object-top cursor-pointer" onclick="openModal(this.src)" onerror="this.src='https://via.placeholder.com/400x500?text=الصورة+غير+موجودة'">
+                <div class="p-4 text-center"><h3 class="font-bold text-xl mb-2">Vagabond</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal (نافذة تكبير الصورة) -->
+    <div id="imageModal" class="fixed inset-0 z-[100] bg-black bg-opacity-90 hidden flex justify-center items-center p-4">
+        <!-- زر الإغلاق -->
+        <span class="absolute top-5 right-5 text-white text-5xl cursor-pointer hover:text-gray-300 z-[110]" onclick="closeModal()">&times;</span>
+        <!-- الصورة المكبرة -->
+        <img id="modalImg" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl modal-enter" src="" alt="صورة مكبرة">
+    </div>
+
+    <!-- Order Form Section (استمارة الطلب) -->
+    <section id="order-section" class="bg-slate-900 text-white py-16">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="bg-white text-slate-800 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl">
+                <h2 class="text-3xl font-black text-center mb-2">أكمل طلبك الآن</h2>
+                <p class="text-center text-slate-500 mb-8">الدفع عند الاستلام والتوصيل متوفر لجميع الولايات</p>
+                
+                <form id="orderForm" class="space-y-5">
+                    <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-4">
+                        <h3 class="font-black text-lg mb-3">🛒 أضف المنتجات إلى طلبك</h3>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block font-bold mb-2">التصميم</label>
+                                <select id="cartProduct" class="w-full border-2 border-slate-200 p-3 rounded-xl focus:border-indigo-500 focus:outline-none bg-white">
+                                    <option value="">-- اختر التصميم --</option>
+                                    <option value="Sukuna">Sukuna (Jujutsu Kaisen)</option>
+                                    <option value="Itachi">Itachi (Naruto)</option>
+                                    <option value="Luffy Gear 5">Luffy Gear 5</option>
+                                    <option value="Luffy Wanted">Luffy Wanted</option>
+                                    <option value="Zoro">Roronoa Zoro</option>
+                                    <option value="Toji">Toji Fushiguro</option>
+                                    <option value="Sasuke">Sasuke Uchiha</option>
+                                    <option value="Vagabond">Vagabond</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block font-bold mb-2">المقاس</label>
+                                    <select id="cartSize" class="w-full border-2 border-slate-200 p-3 rounded-xl focus:border-indigo-500 focus:outline-none bg-white">
+                                        <option value="">-- المقاس --</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block font-bold mb-2">الكمية</label>
+                                    <input type="number" id="cartQuantity" min="1" max="20" value="1"
+                                           class="w-full border-2 border-slate-200 p-3 rounded-xl focus:border-indigo-500 focus:outline-none bg-white">
+                                </div>
+                            </div>
+
+                            <button type="button" id="addToCartBtn"
+                                    class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-xl transition">
+                                + إضافة للطلب
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="cartEmpty" class="text-center text-slate-500 py-4">
+                        لم تضف أي تيشيرت بعد.
+                    </div>
+
+                    <div id="cartItems" class="space-y-3"></div>
+
+                    <div id="orderSummary" class="hidden bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span>عدد القطع:</span>
+                            <span id="cartTotalQuantity" class="font-bold">0</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>سعر المنتجات:</span>
+                            <span id="cartProductsTotal" class="font-bold">0 د.ج</span>
+                        </div>
+                        <div class="flex justify-between items-center text-slate-500">
+                            <span>التوصيل:</span>
+                            <span id="cartShipping" class="font-bold">800 د.ج</span>
+                        </div>
+                        <div class="border-t border-slate-200 pt-3 mt-2 flex justify-between items-center font-black text-xl">
+                            <span>المجموع:</span>
+                            <span id="cartGrandTotal" class="text-indigo-600">0 د.ج</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block font-bold mb-2">الاسم الكامل</label>
+                            <input type="text" id="fullName" required
+                                   class="w-full border-2 border-slate-200 p-3 rounded-xl focus:border-indigo-500 focus:outline-none"
+                                   placeholder="مثال: محمد الماحي" autocomplete="name">
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-2">رقم الهاتف</label>
+                            <input type="tel" id="phone" required
+                                   class="w-full border-2 border-slate-200 p-3 rounded-xl focus:border-indigo-500 focus:outline-none"
+                                   placeholder="05XX XX XX XX" autocomplete="tel" inputmode="tel">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block font-bold mb-2">الولاية</label>
+                            <input type="text" id="wilaya" required
+                                   class="w-full border-2 border-slate-200 p-3 rounded-xl focus:border-indigo-500 focus:outline-none"
+                                   placeholder="مثال: قسنطينة" autocomplete="address-level1">
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-2">البلدية / العنوان</label>
+                            <input type="text" id="address" required
+                                   class="w-full border-2 border-slate-200 p-3 rounded-xl focus:border-indigo-500 focus:outline-none"
+                                   placeholder="العنوان بالتفصيل" autocomplete="street-address">
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                            class="w-full bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-black text-lg sm:text-xl py-4 rounded-xl shadow-lg transition transform hover:scale-[1.02]">
+                        تأكيد الطلب
+                    </button>
+                </form>
+
+                <!-- رسالة النجاح -->
+                <div id="successMessage" class="hidden text-center py-10">
+                    <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-800 mb-2">تم استلام طلبك بنجاح!</h3>
+                    <p class="text-slate-600">سنتصل بك قريباً لتأكيد الطلب وشحنه إليك.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center border-t border-slate-800">
+        <p>&copy; 2026 Artwear DZ. جميع الحقوق محفوظة.</p>
+        <div class="flex justify-center gap-4 mt-4">
+            <span>Instagram: @artwear_dz25</span>
+            <span>Facebook: Artwear</span>
+        </div>
+    </footer>
+
+    <!-- سكربت الإعدادات و التفاعلات (Modal + Submit) -->
+    <script>
+        // === أكواد تكبير الصورة (Modal) ===
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+
+        function openModal(src) {
+            modal.classList.remove('hidden'); // إظهار النافذة
+            modalImg.src = src; // تعيين مسار الصورة
+            
+            // إضافة كلاس الأنيميشن
+            setTimeout(() => {
+                modalImg.classList.add('modal-enter-active');
+            }, 10);
+        }
+
+        function closeModal() {
+            modalImg.classList.remove('modal-enter-active');
+            // انتظار انتهاء الأنيميشن قبل الإخفاء
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modalImg.src = "";
+            }, 300);
+        }
+
+        // إغلاق الصورة عند الضغط في أي مكان خارج الصورة
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) {
+                closeModal();
+            }
+        });
+
+
+        // === إعدادات لوحة التحكم (Admin Panel Config) ===
+        const CONFIG = {
+            googleSheetsURL: "https://script.google.com/macros/s/AKfycbyjqG96zh0W9udk6Gzrbumd4cyvfyMgaTe7UoinYoQ4eGYZIfBBVZxQbE2EGkRKsSlxFg/exec", 
+            facebookPixelID: "رابط_بيكسل_هنا"      
+        };
+
+        // تفعيل Facebook Pixel ديناميكياً
+        if(CONFIG.facebookPixelID !== "رابط_بيكسل_هنا") {
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', CONFIG.facebookPixelID);
+            fbq('track', 'PageView');
+        }
+
+        // === سلة الطلبات ===
+        const UNIT_PRICE = 2200;
+        const SHIPPING_PRICE = 800;
+        let cart = [];
+
+        const cartProduct = document.getElementById('cartProduct');
+        const cartSize = document.getElementById('cartSize');
+        const cartQuantity = document.getElementById('cartQuantity');
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        const cartItemsEl = document.getElementById('cartItems');
+        const cartEmptyEl = document.getElementById('cartEmpty');
+        const orderSummaryEl = document.getElementById('orderSummary');
+        const cartTotalQuantityEl = document.getElementById('cartTotalQuantity');
+        const cartProductsTotalEl = document.getElementById('cartProductsTotal');
+        const cartShippingEl = document.getElementById('cartShipping');
+        const cartGrandTotalEl = document.getElementById('cartGrandTotal');
+
+        function money(value) {
+            return Number(value).toLocaleString('ar-DZ') + ' د.ج';
+        }
+
+        function renderCart() {
+            cartItemsEl.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartEmptyEl.classList.remove('hidden');
+                orderSummaryEl.classList.add('hidden');
+                return;
+            }
+
+            cartEmptyEl.classList.add('hidden');
+            orderSummaryEl.classList.remove('hidden');
+
+            cart.forEach((item, index) => {
+                const row = document.createElement('div');
+                row.className = 'bg-white border border-slate-200 rounded-xl p-4 shadow-sm';
+
+                row.innerHTML = `
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="min-w-0">
+                            <div class="font-black text-slate-800">${escapeHtml(item.product)}</div>
+                            <div class="text-sm text-slate-500 mt-1">
+                                المقاس: <b>${escapeHtml(item.size)}</b> ·
+                                الكمية: <b>${item.quantity}</b>
+                            </div>
+                            <div class="text-indigo-600 font-bold mt-1">${money(item.quantity * UNIT_PRICE)}</div>
+                        </div>
+                        <button type="button" data-remove="${index}"
+                                class="shrink-0 text-red-500 hover:text-red-700 font-bold px-2">
+                            حذف
+                        </button>
+                    </div>
+                `;
+
+                cartItemsEl.appendChild(row);
+            });
+
+            const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const productsTotal = totalQuantity * UNIT_PRICE;
+            const grandTotal = productsTotal + SHIPPING_PRICE;
+
+            cartTotalQuantityEl.textContent = totalQuantity;
+            cartProductsTotalEl.textContent = money(productsTotal);
+            cartShippingEl.textContent = money(SHIPPING_PRICE);
+            cartGrandTotalEl.textContent = money(grandTotal);
+
+            cartItemsEl.querySelectorAll('[data-remove]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    cart.splice(Number(btn.dataset.remove), 1);
+                    renderCart();
+                });
+            });
+        }
+
+        function escapeHtml(value) {
+            return String(value)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        addToCartBtn.addEventListener('click', () => {
+            const product = cartProduct.value;
+            const size = cartSize.value;
+            let quantity = parseInt(cartQuantity.value, 10) || 1;
+
+            if (!product) {
+                alert('اختر التصميم أولاً');
+                return;
+            }
+
+            if (!size) {
+                alert('اختر المقاس أولاً');
+                return;
+            }
+
+            quantity = Math.min(20, Math.max(1, quantity));
+            cartQuantity.value = quantity;
+
+            // نفس التصميم + نفس المقاس = نزيد الكمية بدل إضافة سطر مكرر.
+            const existing = cart.find(item =>
+                item.product === product && item.size === size
+            );
+
+            if (existing) {
+                existing.quantity = Math.min(20, existing.quantity + quantity);
+            } else {
+                cart.push({ product, size, quantity });
+            }
+
+            cartProduct.value = '';
+            cartSize.value = '';
+            cartQuantity.value = 1;
+
+            renderCart();
+        });
+
+        renderCart();
+
+        // === إرسال الطلب إلى Google Sheets ===
+        const form = document.getElementById('orderForm');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            if (cart.length === 0) {
+                alert('أضف تيشيرت واحدًا على الأقل إلى الطلب');
+                return;
+            }
+
+            const btn = form.querySelector('button[type="submit"]');
+            btn.innerHTML = 'جاري إرسال الطلب...';
+            btn.disabled = true;
+
+            const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const productsTotal = totalQuantity * UNIT_PRICE;
+            const grandTotal = productsTotal + SHIPPING_PRICE;
+
+            const orderItems = cart.map(item =>
+                `${item.product} | المقاس: ${item.size} | الكمية: ${item.quantity}`
+            ).join(' || ');
+
+            const orderSizes = cart.map(item =>
+                `${item.product}: ${item.size}`
+            ).join(' || ');
+
+            const orderQuantities = cart.map(item =>
+                `${item.product}: ${item.quantity}`
+            ).join(' || ');
+
+            let formData = new FormData();
+            formData.append('Date', new Date().toLocaleString('ar-DZ'));
+            formData.append('Name', document.getElementById('fullName').value.trim());
+            formData.append('Phone', document.getElementById('phone').value.trim());
+            formData.append('Wilaya', document.getElementById('wilaya').value.trim());
+            formData.append('Address', document.getElementById('address').value.trim());
+            formData.append('Product', orderItems);
+            formData.append('Size', orderSizes);
+            formData.append('Quantity', totalQuantity);
+            formData.append('UnitPrice', UNIT_PRICE);
+            formData.append('Shipping', SHIPPING_PRICE);
+            formData.append('Total', grandTotal);
+            formData.append('Price', grandTotal);
+            formData.append('ItemsJSON', JSON.stringify(cart));
+
+            if (!CONFIG.googleSheetsURL || CONFIG.googleSheetsURL === "رابط_تطبيق_جوجل_هنا") {
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    document.getElementById('successMessage').classList.remove('hidden');
+                    if(typeof fbq === 'function') {
+                        fbq('track', 'Purchase', {value: grandTotal, currency: 'DZD'});
+                    }
+                }, 1000);
+                return;
+            }
+
+            fetch(CONFIG.googleSheetsURL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                form.style.display = 'none';
+                document.getElementById('successMessage').classList.remove('hidden');
+                if(typeof fbq === 'function') {
+                    fbq('track', 'Purchase', {value: grandTotal, currency: 'DZD'});
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error);
+                alert('حدث خطأ في الإرسال، يرجى المحاولة لاحقاً');
+                btn.innerHTML = 'تأكيد الطلب';
+                btn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
